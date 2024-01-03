@@ -1,0 +1,378 @@
+@font-face {
+  font-family: "AvenirNexRegular";
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNextDemi";
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+  font-size: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+  font-size: 700;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "AvenirNext";
+}
+
+ul {
+  list-style: none;
+}
+ul a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  -webkit-box-pack: column;
+      -ms-flex-pack: column;
+          justify-content: column;
+  background-color: #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFFFFF;
+}
+
+.logo {
+  background-image: url("/assets/Logo/Logo-bandsite.svg");
+  height: 20px;
+  width: 120px;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.navbar-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navbar-menu {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: min(100%, 1280px);
+}
+@media (min-width: 768px) {
+  .navbar-menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 48px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+@media (min-width: 460px) {
+  .navbar-menu {
+    padding-top: 0rem;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.hero {
+  z-index: 2;
+  width: auto;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5)), to(rgba(50, 50, 50, 0.5))), url(/assets/Images/hero-bio.jpg);
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(/assets/Images/hero-bio.jpg);
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 123vh;
+  }
+}
+@media (min-width: 900px) {
+  .hero {
+    height: 132vh;
+  }
+}
+.hero__title {
+  color: white;
+  font-size: 60px;
+  letter-spacing: 0.1px;
+  font-weight: 600;
+}
+
+.intro__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  font-family: "AvenirNextDemi";
+  padding-top: 48px;
+  padding-bottom: 36px;
+}
+@media (min-width: 460px) {
+  .intro__title {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    font-family: "AvenirNextDemi";
+  }
+}
+@media (min-width: 768px) {
+  .intro__title {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .intro__title {
+    font-weight: 600;
+  }
+}
+@media (min-width: 1280px) {
+  .intro__title {
+    padding-left: 8px;
+  }
+}
+.intro__paragraph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 460px) {
+  .intro__paragraph {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+@media (min-width: 1280px) {
+  .intro__paragraph {
+    padding-left: 8px;
+  }
+}
+.intro__paragraph-one {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirNexRegular";
+}
+@media (min-width: 460px) {
+  .intro__paragraph-one {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "AvenirNexRegular";
+  }
+}
+@media (min-width: 768px) {
+  .intro__paragraph-one {
+    width: 48%;
+  }
+}
+@media (min-width: 1280px) {
+  .intro__paragraph-one {
+    width: 43%;
+  }
+}
+.intro__paragraph-two {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirNexRegular";
+  padding-top: 48px;
+  padding-bottom: 36px;
+}
+@media (min-width: 460px) {
+  .intro__paragraph-two {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: "AvenirNexRegular";
+  }
+}
+@media (min-width: 768px) {
+  .intro__paragraph-two {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .intro__paragraph-two {
+    padding-top: 0;
+    padding-left: 0.8px;
+    width: 52%;
+  }
+}
+@media (min-width: 1280px) {
+  .intro__paragraph-two {
+    widht: 45%;
+  }
+}
+
+@media (min-width: 768px) {
+  .photo {
+    padding-left: 48px;
+  }
+}
+@media (min-width: 1280px) {
+  .photo {
+    padding-left: 48px;
+  }
+}
+@media (min-width: 460px) {
+  .photo {
+    margin-left: 36px;
+  }
+}
+
+.photo__gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 768px) {
+  .photo__gallery {
+    padding-bottom: 32px;
+  }
+}
+.photo__gallery--img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .photo__gallery--img {
+    width: 30%;
+  }
+}
+.photo__gallery--title {
+  font-weight: 600;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+@media (min-width: 768px) {
+  .photo__gallery--title {
+    padding-left: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .photo__gallery--title {
+    font-size: 36px;
+  }
+}
+
+.footer {
+  background-color: #323232;
+}
+@media (min-width: 768px) {
+  .footer {
+    position: relative;
+  }
+}
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+@media (min-width: 768px) {
+  .footer__content {
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__content {
+    width: 50%;
+    padding-left: 80px;
+  }
+}
+.footer__content__title {
+  color: #FFFFFF;
+  font-size: medium;
+}
+@media (min-width: 768px) {
+  .footer__content__title {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__content__title {
+    padding-top: 16px;
+  }
+}
+.footer__social--logo {
+  text-align: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+.footer__band--logo {
+  text-align: right;
+  background-image: url(/assets/Logo/Logo-bandsite.svg);
+  height: 20px;
+  width: 120px;
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */

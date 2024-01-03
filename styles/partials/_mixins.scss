@@ -1,0 +1,158 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+@mixin reset {
+    html {
+        box-sizing: border-box;
+      }
+      
+      *,
+      * ::before,
+      * ::after {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      
+      body {
+        font-family:$font-regular;
+        color: $color-primary-white;
+        margin: 0;
+      }
+}
+
+
+@mixin between-mobile-tablet {
+  @media (min-width: $breakpointbetween-mobile-tablet) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpointtablet) {
+    @content;
+  }
+}
+
+@mixin between-tablet-desktop {
+  @media (min-width: $breakpointbetween-tablet-desktop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media  (min-width: $breakpointdesktop) {
+    @content;
+  }
+}
+
+@mixin padding-headline {
+  padding-top: 48px;
+  padding-bottom: 36px;
+  @include tablet {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+ 
+}
+@mixin padding-component {
+  padding-top: 48px;
+  padding-bottom: 36px;
+  @include tablet {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+}
+
+@mixin padding-images {
+  padding-bottom: 8px;
+  @include tablet {
+    padding-bottom: 4px;
+  }
+}
+
+
+
+@mixin page-header {
+  font-size: 60px;
+  line-height: 68px;
+  font-weight: 700;
+  font-family: $font-bold;
+  @include mobile{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    font-family: $font-bold;
+  }
+}
+
+@mixin section-header {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  @include between-mobile-tablet() {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    font-family: $font-bold;
+
+  }
+}
+
+@mixin subheader {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  font-family: $font-demi;
+  @include between-mobile-tablet() {
+    font-size: 14px;;
+    line-height: 22px;
+    font-weight: 600;
+    font-family: $font-demi;
+  }
+}
+
+
+@mixin body-copy {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: $font-regular;
+  @include between-mobile-tablet() {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: $font-regular;
+  }
+}
+
+
+@mixin footer-copy{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: $font-regular;
+    @include between-mobile-tablet() {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      font-family: $font-regular;
+    }
+  }
+
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+
+
