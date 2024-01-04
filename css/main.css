@@ -375,4 +375,47 @@ ul a {
   background-repeat: no-repeat;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.form__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 1280px) {
+  .form {
+    height: 48px;
+    width: auto;
+  }
+}
+@media (min-width: 1280px) and (min-width: 460px) {
+  .form {
+    height: 36px;
+    width: auto;
+  }
+}
+@media (min-width: 1280px) {
+  .form__container {
+    margin: 0 auto;
+    width: min(100%, 1280px);
+  }
+}
+.form__heading {
+  font-weight: bold;
+}
+.form__photo, .form__photo--create {
+  background: #E1E1E1;
+  border-radius: 50%;
+}
+@media (min-width: 1280px) {
+  .form__photo, .form__photo--create {
+    height: 48px;
+    widht: 48px;
+  }
+}
+@media (min-width: 460px) {
+  .form__photo, .form__photo--create {
+    height: 36px;
+    width: 36px;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -280,3 +280,49 @@ ul {
   
 }
 
+.form{ 
+  &__container{
+display: flex;
+  }
+    @include desktop {
+      height: 48px;
+      width: auto;
+
+    @include between-mobile-tablet{
+      height: 36px;
+      width: auto;
+    }
+
+    &__container{
+      margin: 0 auto;
+      width:min(100%, $breakpointdesktop);
+
+    
+    }
+
+      }
+
+      &__heading{
+        font-weight: bold;
+
+      }
+
+      &__photo,
+      &__photo--create{
+        background: $clr-secondary-mercury;
+        border-radius:50%;
+        @include desktop{
+          height: 48px;
+          widht:48px;
+
+        }
+        @include between-mobile-tablet{
+          height: 36px;
+          width:36px;
+        }
+
+
+      }
+
+      }
+
