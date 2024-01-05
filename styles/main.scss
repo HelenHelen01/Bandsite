@@ -28,42 +28,59 @@ ul {
 
 
   .navbar{
-    justify-content: column;
+   
     background-color: $clr-primary-black;
     display:flex;
-    flex-direction: column;
-    align-items: center;
-    color:$clr-primary-white;
-    
-  }
-
-
-  .logo
-  {
-    background-image: url("/assets/Logo/Logo-bandsite.svg");
-    height:20px;
-    width:120px;
-    display:block;
-    background-repeat: no-repeat;
+    flex-direction:column;
+    justify-content: center;
   
-    
-  }
+    color:$clr-primary-white;
+    @include mobile{
+      padding: 1.5rem 1rem 1rem 0;
+    @include desktop{
 
-  .navbar-list {
+    } 
+
+    }
+
+
+
+    &__logo {
+        background-image: url("/assets/Logo/Logo-bandsite.svg");
+        height:1.5em;
+        width:8em;
+        background-repeat: no-repeat;
+     
+        
+       
+
+    }
+  }
+  
+
+
+ 
+
+  .navbar__list {
     display:flex;
+    flex-wrap:wrap;
     list-style: none;
-    width:100%;
-    justify-content: space-around;
+    width:10%;
+  
+    padding-left: 30%;
+    flex-direction: row;
   }
   
    
   
-  .navbar-menu{
+  .navbar__menu{
  
       align-items: center;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+    
       width: min(100%, $breakpointdesktop);
+    
     
       @media (min-width: $breakpointtablet) {
         flex-direction: row;
@@ -72,11 +89,15 @@ ul {
         padding-right: 36px;
       }
 
-      @media (min-width: $breakpointbetween-mobile-tablet) {
+      @media (min-width: $breakpointmobile) {
         padding-top: 0rem;
         padding-left: 16px;
         padding-right: 16px;
       }
+
+    &__item{
+      display: flex;
+    }
   }
 
 
@@ -86,18 +107,19 @@ ul {
     z-index: 2;
     width: auto;
     height: 100vh;
-    background-position: center;
+    
     background-size: cover;
     display:flex;
     flex-direction: row;
     align-items: center;
     position: relative;
     background-image: linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)), url(/assets/Images/hero-bio.jpg); //50% opacity//
-    @include tablet {
-      height: 123vh;
+    @include mobile {
+      height: 54vh;
     }
-    @include between-tablet-desktop {
-      height: 132vh;
+    @include desktop {
+      height: 75vh;
+      
     }
      
     &__title {
@@ -109,17 +131,39 @@ ul {
 
   }
 
+  .about{
+    display:flex;
+    &__image{
+      @include mobile{
+        height: 34vh;
+  
+      }
+
+      @include desktop{
+        height:74vh;
+        position:center;
+      }
+    
+    }
+  }
+
+
+
+
+
 .intro {
   &__title {
     @include subheader;
     @include padding-headline;
    
-    @include tablet {
+    @include mobile {
      
-      font-weight: 600;
+     
+      height: 54vh;
     }
     @include desktop {
       padding-left: 8px;
+      height:40vh;
     }
   }
  &__paragraph {
@@ -128,7 +172,7 @@ ul {
 
 
 
-  @include between-mobile-tablet {
+  @include mobile {
     flex-direction: row;
     padding-left: 4px;
     padding-right: 4px;
@@ -176,7 +220,7 @@ ul {
       padding-left: 48px;
   }
 
-  @include between-mobile-tablet {
+  @include mobile {
       margin-left: 36px;
   }
 }
@@ -224,31 +268,29 @@ ul {
   background-color: $clr-primary-black;
 
   @include tablet {
-    position: relative;
+    
     
   }
 
 &__content{
   display: flex;
-  box-sizing: border-box;
-  margin: 0;
-  flex-direction: row;
+ 
+
 
  @include tablet {
-  width: 100%;
+  
 }
 
 @include desktop {
-  width: 50%;
+ 
   padding-left: 80px;
 }
 
 &__title {
   color:$clr-primary-white;
-  font-size: medium;
+
 
   @include tablet {
-    display: inline-flex;
 }
 
 @include desktop {
@@ -261,7 +303,7 @@ ul {
 
 &__social--logo{
   text-align: left;
-  box-sizing:border-box;
+ 
   margin:0;
 }
 
@@ -269,36 +311,36 @@ ul {
 }
 
 .footer__band--logo{
-  text-align:right;
+  
   background-image: url(/assets/Logo/Logo-bandsite.svg);
   height:20px;
   width:120px;
   padding-right: 20px;
   background-repeat: no-repeat;
-  box-sizing: border-box;
+ 
   
   
   
 }
 
 .form{ 
-  &__container{
-display: flex;
+
+  
+  @include mobile{
+    height: 36px;
+    width: auto;
   }
-    @include desktop {
-      height: 48px;
-      width: auto;
 
-    @include between-mobile-tablet{
-      height: 36px;
-      width: auto;
-    }
+  @include desktop {
+    height: 48px;
+    width: auto;
 
-    &__container{
-      margin: 0 auto;
-      width:min(100%, $breakpointdesktop);
+   
 
-    
+  &__container{
+    margin: 0 auto;
+    width:min(100%, $breakpointdesktop);
+
     }
 
       }
@@ -312,15 +354,6 @@ display: flex;
       &__photo--create{
         background: $clr-secondary-mercury;
         border-radius:50%;
-        @include desktop{
-          height: 48px;
-          widht:48px;
-
-        }
-        @include between-mobile-tablet{
-          height: 36px;
-          width:36px;
-        }
 
 
       }

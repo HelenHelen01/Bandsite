@@ -21,8 +21,8 @@
 }
 
 
-@mixin between-mobile-tablet {
-  @media (min-width: $breakpointbetween-mobile-tablet) {
+@mixin mobile {
+  @media (min-width: $breakpointmobile) {
     @content;
   }
 }
@@ -103,7 +103,7 @@
   line-height: 32px;
   font-weight: 600;
   font-family: $font-demi;
-  @include between-mobile-tablet() {
+  @include mobile() {
     font-size: 14px;;
     line-height: 22px;
     font-weight: 600;
@@ -117,7 +117,7 @@
   line-height: 22px;
   font-weight: 400;
   font-family: $font-regular;
-  @include between-mobile-tablet() {
+  @include mobile() {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
