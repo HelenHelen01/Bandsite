@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
-    <title>BandSite</title>
+    <title>Biography |  BandSite</title>
 
 </head>
 <body>
@@ -14,7 +14,7 @@
     <img class="navbar__logo"></img>
       <ul class="navbar__list">
         <li class="navbar__item"><a class="main-navigation__link main-navigation--biography" href="./index.html">Biography</a></li>
-        <li class="navbar__item"><a class="main-navigation__link main-navigation--shows" href="">Shows</a></li>
+        <li class="navbar__item"><a class="main-navigation__link main-navigation--shows" href="./pages/shows.html">Shows</a></li>
       </ul>
    </div>
     
@@ -26,7 +26,8 @@
     <div class="hero__paragraph-container">
       <h1 class="hero__title">Beautiful Beasts Album</h1>
       <h2 class="hero__title--big">Queen of Yellow x For The Stings</h2>
-      <div class="spotify"><!--<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
+      <div class="spotify">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
         src="https://w.soundcloud.com/player/?url=https%3A
         //api.soundcloud.com/tracks/753249712&color=%23fcf5f4&auto_play=true&hide_related=false&show_comments=
         true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; 
@@ -36,10 +37,11 @@
         <a href="https://soundcloud.com/user-476220227" title="ANT!XX" target="_blank" style="color: #cccccc; text-decoration: none;">
           ANT!XX</a>· <a href="https://soundcloud.com/user-476220227/foster-the-people-imagination-e-cue-remix" 
           title="Foster The People - Imagination (ANT!XX Remix)" target="_blank" style="color: #cccccc; 
-          text-decoration: none;">Foster The People - Imagination (ANT!XX Remix)</a> -->
+          text-decoration: none;">Foster The People - Imagination (ANT!XX Remix)</a> 
         </div></div> 
     </div>
   </div>
+</section>
 <section class="about">
   <h2 class="about__title">About the Musicians</h2>
   <div class="about__container-info">
@@ -74,98 +76,74 @@
 <section class="form">
   <article class="form__container">
     <h5 class="form__heading">Join the conversation</h5>
-    <div class="form__sub--container">
+    <div class="form__sub-container">
     <div class="form__create">
       <div class="form__photo">
-        <img class="form__photo--create" src="/assets/Images/Mohan-muruge.jpg" alt="mohan muruge photo">
+        <img class="form__photo-create" src="/assets/Images/Mohan-muruge.jpg" alt="mohan muruge photo">
         </div>
-        <form id="formComment" class="form__comment">
-          <div class="form__input--container">
-            <label class="form__label" for="name">name
+        <form id="formComment" class="form__comment" action="submit">
+          <div class="form__input-container">
+            <label class="form_label" for="name">name
               <span id=""></span>
             </label>
-            <input class="form__input--name" type="text" name="name" id="name" required placeholder="Enter your name">
+            <input class="form__input-name comment__input--short" type="text" name="name" id="name" required placeholder="Enter your name">
           </div>
-          <div class="form__input--container">
+          <div class="form__input-container">
             <label class="form__label" for="comment">comment
-              <span id="" class="form__label--comment"></span>
+              <span id="" class="form__label-comment"></span>
             </label>
-            <textarea class="form_input--text" id="comment" name="comment" placeholder="ADD A NEW COMMENT">
+            <textarea class="form_input-text comment__input--long" id="comment" name="comment" placeholder="ADD A NEW COMMENT">
               </textarea>
           </div>
-          <button id="formBtn" type="submit" class="form_btn">COMMENT</button>
+          <button id="formBtn" type="submit" class="form_btn">Submit</button>
           </form>
           </div>
           <div class="form_artcile">
             </div>
             </div>
+            <hr class="convo-divider">
   </article>
 
-</section>
-<!--
-<section class="footer">
-  <div class="footer__wrapper">
-        <div class="footer__content">
-                    <p class="footer__title">
-                        Get in Touch
-                    </p>
-              <div class="footer__social--logo">
-              <img class="footer__img" src="/assets/Icons/SVG/Icon-facebook.svg">
-              <img class="footer__img" src="/assets/Icons/SVG/Icon-instagram.svg">
-              <img class="footer__img" src="/assets/Icons/SVG/Icon-twitter.svg">
-              </div>
-              <div class="footer__band--logo">
 
-              </div>
-              
-        </div>
-      <div class="contact__details"> 
-     <div class="contact__details_first">
-          <div class="footer__content__name">
-          <p>Cam Adams</p>
-          <p>The Bees Knees Managament</p> 
-          </div>
-     <div class="footer__content__address">
-          <p>503 Broadway Penthouse</p>
-          <p>New York, NY 10012, USA</p> 
-    </div>
-      <div class="footer_content_email">
-       <p>info@thebeesknees.com</p>
-      </div>
-    </div>
-    <div class="contact__details_second">
-      <div class="footer__content__name">
-        <p>Pearl Gregg</p> 
-        <p>Limitless Artist Group</p> 
-        </div>
-      <div class="footer__content__address">
-        <p>Booking Agent for</p>
-        <p>USA / South America / Japan</p>
-      </div>
-      <div class="footer_content_email">
-        <p>pearl.gregg@limitlessag.com</p>
-      </div>
-      </div>
-      <div class="contact__details_third">
-      <div class="footer__content__name">
-        <p>Carson Whyte</p> 
-        <p>ARCH Entertainment</p> 
-      </div>
-      <div class="footer__content__address">
-        <p>Booking Agent for</p>
-        <p>UK/EU/ AU</p>
-      </div>
-      <div class="footer_content_email">
-        <p>cwhyte@archentertainment.com</p>
-      </div>
-        </div>-contact details
-      </div>footer wrapper
-  
+<footer>
+  <!-- footer section same as index.html -->
+  <div class="footer-top">
+      <section class="footer-top__icons-section">
+          <h3 class="footer-top__title">Get in Touch</h3>
+          <a href="https://www.instagram.com/3dglowprintingstore"><img class="footer-top__icons" src="../assets/Icons/SVG/Icon-instagram.svg" alt="socialInstagram"></a>
+          <a href="https://www.facebook.com"><img class="footer-top__icons" src="../assets/Icons/SVG/Icon-facebook.svg" alt="socialfacebook"></a>
+          <a href="https://www.twitter.com"><img class="footer-top__icons" src="../assets/Icons/SVG/Icon-twitter.svg" alt="socialTwitter"></a>
+      </section>
+      <a href="../index.html"><img class="footer-top__logo" src="../assets/Logo/Logo-bandsite.svg" alt="logo Big Bansite logo"></a>
   </div>
+  <div class="employees-section">
+      <section class="employee">
+          <h4 class="employee__name">Cam Adams<br>
+              The Bees Knees Management</h4>
+          <p class="employee__address">503 Broadway Penthouse, <br>
+              New York, NY 10012, US</p>
+          <a href="mailto:info@thebeesknees.com" class="employee__email">info@thebeesknees.com </a>
+      </section>
+      <section class="employee">
+          <h4 class="employee__name">Pearl Gregg<br>
+              Limitless Artist Group</h4>
+          <p class="employee__address">Booking Agent for<br>
+              USA / South America / Japan</p>
+          <a href="mailto:pearl.gregg@limitlessag.com" class="employee__email">pearl.gregg@limitlessag.com</a>
+      </section>
+      <section class="employee">
+          <h4 class="employee__name">Carson Whyte<br>
+              ARCH Entertainment</h4>
+          <p class="employee__address">Booking Agent for<br>
+              UK / EU / AU</p>
+          <a href="mailto:cwhyte@archentertainment.com" class="employee__email">cwhyte@archentertainment.com</a>
+      </section>
   </div>
- 
-</section>
--->
+  <a href="../index.html"><img class="logo-mobile" src="/assets/Logo/Logo-bandsite.svg" alt="bandsite logo-mobile"></a>
+  <p class="copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
+</footer>
+<script src="/scripts/shows.js"></script>
+</body>
 </body>
 </html>
 

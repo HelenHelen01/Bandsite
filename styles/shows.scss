@@ -1,0 +1,348 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+
+.navbar{
+   
+    background-color: $clr-primary-black;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+  
+    color:$clr-primary-white;
+    @include mobile{
+      padding: 1.5rem 1rem 1rem 0;
+    @include desktop{
+
+    } 
+
+    }
+
+
+
+    &__logo {
+        background-image: url("/assets/Logo/Logo-bandsite.svg");
+        height:1.5em;
+        width:8em;
+        background-repeat: no-repeat;
+     
+        
+       
+
+    }
+  }
+  
+
+
+ 
+
+  .navbar__list {
+    display:flex;
+    flex-wrap:wrap;
+    list-style: none;
+    width:10%;
+  
+    padding-left: 30%;
+    flex-direction: row;
+  }
+  
+   
+  
+  .navbar__menu{
+ 
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    
+      width: min(100%, $breakpointdesktop);
+    
+    
+      @media (min-width: $breakpointtablet) {
+        flex-direction: row;
+        padding-top: 48px;
+        padding-left:36px;
+        padding-right: 36px;
+      }
+
+      @media (min-width: $breakpointmobile) {
+        padding-top: 0rem;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+    &__item{
+      display: flex;
+    }
+  }
+
+
+  .hero
+  {
+  
+    z-index: 2;
+    width: auto;
+    height: 100vh;
+    
+    background-size: cover;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)), url(/assets/Images/hero-bio.jpg); //50% opacity//
+    background-position: top;
+    @include mobile {
+      height: 28rem;
+    }
+    @include desktop {
+      height: 35rem;
+      background-position: 0 30%;
+      
+    }
+     
+    &__title {
+      color: white;
+      font-size: 60px;
+      letter-spacing: 0.1px;
+      font-weight: 600;
+    }
+
+  }
+
+  .about{
+    display:flex;
+    &__image{
+      @include mobile{
+        height: 34vh;
+  
+      }
+
+      @include desktop{
+        height:74vh;
+        position:center;
+      }
+    
+    }
+  }
+
+
+
+
+
+.intro {
+  &__title {
+    @include subheader;
+    @include padding-headline;
+   
+    @include mobile {
+     
+     
+      height: 54vh;
+    }
+    @include desktop {
+      padding-left: 8px;
+      height:40vh;
+    }
+  }
+ &__paragraph {
+  display: flex;
+  flex-direction: column;
+
+
+
+  @include mobile {
+    flex-direction: row;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  @include desktop {
+    padding-left: 8px;
+  }
+}
+
+&__paragraph-one {
+  @include body-copy;
+  @include tablet {
+    width: 48%;
+  }
+  @include desktop {
+    width:43%;
+  }
+}
+&__paragraph-two {
+  @include body-copy;
+  @include padding-component;
+
+  @include tablet {
+    padding-top: 0;
+    padding-left: 0.8px;
+    width:52%;
+  }
+  @include desktop {
+    widht:45%;
+  }
+}
+
+}
+          
+
+.shows {
+    @include flex($direction:column); 
+    @include tablet {
+        padding: 0 3rem;
+    }
+    @include desktop {
+        padding: 0 8rem;
+        flex-direction: row;
+    }
+    &__title {
+      
+        font-size: 2rem;
+        padding: 3rem 0 1rem 1rem;
+        margin:0;
+        @include mobile{
+         @include text-customized($size:2.35rem, $pad:3rem 0 2.25rem 1rem, $w:22.133rem);
+        }
+        @include desktop {
+            @include text-customized($size:2.5rem, $pad:3rem 0 2.25rem 0, $w:17rem);
+        }
+    }
+    &__right-section{
+        padding-bottom: 1.5rem;
+    }
+}
+
+.column-entries {
+   
+    display: none;
+    
+    @include mobile {
+        display:flex;
+        width:35.5rem;
+        // padding-top:0;
+        // padding-bottom:1rem;
+        // padding-left:1.125rem;
+        padding: 0 0 1rem 1.125rem;
+    }
+    @include desktop{
+        padding-top:3rem;
+        padding-bottom:2.5rem;
+    }
+    &__title{
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        font-weight:500;
+        color:$clr-primary-silver;
+       
+        &--first{
+            margin-right: 11.85rem;
+            @include desktop {
+                margin-right: 13.5rem;
+            }
+        }
+        &--second{
+            margin-right: 9.75rem;
+        }
+    }
+}
+.shows-row {
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width:53rem;
+    padding: 1rem;
+    border-bottom: $border-bottom;
+    $transition: background-color 0.5s ease-in-out;
+    transition: $transition;
+
+    cursor: pointer;
+    &:hover{
+        background-color: $clr-primary-black;
+    }
+    //--selected modifier added with javascript when clicked to highlight each row
+    &--selected{
+        background-color: $clr-secondary-mercury;
+        transition:none;
+        &:hover{
+            background-color: $clr-secondary-alabaster;
+        }
+    }
+    @include tablet {
+        padding: 1.5rem 1.125rem;
+        width:50rem;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    @include desktop{
+        width:53rem;
+    }
+    &__date{
+        width:10rem;
+        font-size:1rem;
+        font-weight: 500;
+    
+        padding-bottom:0.75rem;
+        @include tablet{
+            padding-bottom:0;
+        }
+    }
+
+    &__venue-location-section{
+        width:22rem;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: column;
+       
+        @include tablet {
+            width:22rem;
+            align-items: center;
+            flex-direction:row
+        }
+    }
+    &__venue{
+        font-size: 1rem;
+        font-weight: 400;
+        width:22rem;
+        padding-bottom:0.75rem;
+        @include tablet{
+            padding-bottom:0;
+        }
+    }
+    &__location {
+        font-size: 1rem;
+        font-weight: 400;
+        width:13rem;
+        padding-bottom:0.75rem;
+        @include tablet{
+            padding-bottom:0;
+        }
+
+    }
+    &__title {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color:$clr-secondary-mercury; 
+     
+        margin:0;
+        @include tablet{
+            display: none;
+        }
+    }
+}
+
+
+.btn {
+    @include btn($w:92vw);
+    @include tablet{
+        font-size: 1rem;
+        font-color:$clr-primary-black;
+        font-weight: 400;
+        width:10rem;
+        height:2.5rem;
+    }
+}
+
+
