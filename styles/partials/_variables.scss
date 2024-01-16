@@ -1,6 +1,6 @@
-$breakpointbetween-mobile-tablet: 460px;
+$breakpointmobile: 460px;
 $breakpointtablet: 768px;
-$breakpointbetween-tablet-desktop: 900px;
+
 $breakpointdesktop: 1280px;
 
 $clr-primary-black: #323232;
@@ -10,10 +10,15 @@ $clr-primary-white: #FFFFFF;
 $clr-secondary-black:#000000;
 $clr-secondary-mercury:#E1E1E1;
 $clr-secondary-alabaster:#FAFAFA;
-
+$transition: background-color 0.5s ease-in-out;
 
 
 
 $font-regular: 'AvenirNexRegular';
 $font-demi: 'AvenirNextDemi';
 $font-bold: 'AvenirNextBold';
+$font-family: 'Avenir';
+
+$divider-color:#E1E1E1;
+$border-bottom: solid 1px $divider-color;
+$alternative-background: #FAFAFA;

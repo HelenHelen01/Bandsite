@@ -28,42 +28,59 @@ ul {
 
 
   .navbar{
-    justify-content: column;
+   
     background-color: $clr-primary-black;
     display:flex;
-    flex-direction: column;
-    align-items: center;
-    color:$clr-primary-white;
-    
-  }
-
-
-  .logo
-  {
-    background-image: url("/assets/Logo/Logo-bandsite.svg");
-    height:20px;
-    width:120px;
-    display:block;
-    background-repeat: no-repeat;
+    flex-direction:column;
+    justify-content: center;
   
-    
-  }
+    color:$clr-primary-white;
+    @include mobile{
+      padding: 1.5rem 1rem 1rem 0;
+    @include desktop{
 
-  .navbar-list {
+    } 
+
+    }
+
+
+
+    &__logo {
+        background-image: url("/assets/Logo/Logo-bandsite.svg");
+        height:1.5em;
+        width:8em;
+        background-repeat: no-repeat;
+     
+        
+       
+
+    }
+  }
+  
+
+
+ 
+
+  .navbar__list {
     display:flex;
+    flex-wrap:wrap;
     list-style: none;
-    width:100%;
-    justify-content: space-around;
+    width:10%;
+  
+    padding-left: 30%;
+    flex-direction: row;
   }
   
    
   
-  .navbar-menu{
+  .navbar__menu{
  
       align-items: center;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+    
       width: min(100%, $breakpointdesktop);
+    
     
       @media (min-width: $breakpointtablet) {
         flex-direction: row;
@@ -72,11 +89,15 @@ ul {
         padding-right: 36px;
       }
 
-      @media (min-width: $breakpointbetween-mobile-tablet) {
+      @media (min-width: $breakpointmobile) {
         padding-top: 0rem;
         padding-left: 16px;
         padding-right: 16px;
       }
+
+    &__item{
+      display: flex;
+    }
   }
 
 
@@ -86,18 +107,21 @@ ul {
     z-index: 2;
     width: auto;
     height: 100vh;
-    background-position: center;
+    
     background-size: cover;
     display:flex;
     flex-direction: row;
     align-items: center;
     position: relative;
     background-image: linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)), url(/assets/Images/hero-bio.jpg); //50% opacity//
-    @include tablet {
-      height: 123vh;
+    background-position: top;
+    @include mobile {
+      height: 28rem;
     }
-    @include between-tablet-desktop {
-      height: 132vh;
+    @include desktop {
+      height: 35rem;
+      background-position: 0 30%;
+      
     }
      
     &__title {
@@ -109,17 +133,39 @@ ul {
 
   }
 
+  .about{
+    display:flex;
+    &__image{
+      @include mobile{
+        height: 34vh;
+  
+      }
+
+      @include desktop{
+        height:74vh;
+        position:center;
+      }
+    
+    }
+  }
+
+
+
+
+
 .intro {
   &__title {
     @include subheader;
     @include padding-headline;
    
-    @include tablet {
+    @include mobile {
      
-      font-weight: 600;
+     
+      height: 54vh;
     }
     @include desktop {
       padding-left: 8px;
+      height:40vh;
     }
   }
  &__paragraph {
@@ -128,7 +174,7 @@ ul {
 
 
 
-  @include between-mobile-tablet {
+  @include mobile {
     flex-direction: row;
     padding-left: 4px;
     padding-right: 4px;
@@ -176,7 +222,7 @@ ul {
       padding-left: 48px;
   }
 
-  @include between-mobile-tablet {
+  @include mobile {
       margin-left: 36px;
   }
 }
@@ -220,63 +266,254 @@ ul {
 
 
 //footer
-.footer{
-  background-color: $clr-primary-black;
 
+
+
+footer {
+  background: $clr-primary-black;
+  @include flex($direction:column); 
+  padding: 0 1rem;
   @include tablet {
-    position: relative;
+      padding: 0rem 3rem 2.25rem 3rem;
+  }
+  @include desktop {
+      padding: 0rem 8rem 2.25rem 8rem;
+  }
+}
+
+.footer-top {
+  @include flex($direction:row, $justify:space-between, $gap:normal); //refer to mixins
+  @include tablet {
+      @include flex($justify:space-between, $align:center);
   }
 
-&__content{
-  display: flex;
-  box-sizing: border-box;
-  margin: 0;
-  flex-direction: row;
-
- @include tablet {
-  width: 100%;
+  &__title{
+      @include font($size:2rem, $color:$alternative-background);//refer to mixins
+      padding:2rem 0 1rem 0;
+      margin: 0;
+      width:100%;
+      @include tablet {
+          @include text-customized($size:2.35rem, $pad:3rem 0 2.25rem 0,$w:14.375rem); //refer to mixins
+      }
+      @include desktop {
+          font-size:2.5rem;
+          margin-right: 2rem;
+          width:15rem;
+      }
+  }
+  &__icons-section {
+      @include flex($wrap:wrap, $gap:1.125rem, $align: center);
+      margin-bottom: 1.5rem;
+      @include tablet {
+          flex-wrap: nowrap;
+          margin-bottom:0;
+      }
+  }
+  &__icons{
+      //used transform for the size of social media icons because the facebook icon appears larger if width is used, and a special modifier needed to applied in that case. 
+      transform: scale(1.5);
+      padding:0.25rem 0.5rem 0 0.35rem;
+      @include tablet{
+          transform: scale(1.2);
+          padding: 0.25rem 0 0 0;
+      }
+      @include desktop{
+          padding:0.25rem 0.75rem 0 0;
+      }
+      
+  }
+  &__logo {
+      //logo is hidden in mobile view and visible from tablet viewport and higher
+      display: none;
+      @include tablet{
+          display: block;
+      }
+      @include desktop {
+          // transform: scale(1.25);
+          width:8.25rem;
+      }
+  }
 }
 
-@include desktop {
-  width: 50%;
-  padding-left: 80px;
-}
 
-&__title {
-  color:$clr-primary-white;
-  font-size: medium;
-
+.employees-section {
+  @include flex($wrap:wrap, $gap:3rem);
+  padding-bottom:2rem;
   @include tablet {
-    display: inline-flex;
-}
-
-@include desktop {
-    padding-top: 16px;
-}
-}
- 
-}
-
-
-&__social--logo{
-  text-align: left;
-  box-sizing:border-box;
-  margin:0;
-}
-
+      column-gap: 3.8rem;
+      width: 100%;
+      padding-bottom:3rem;
+  }
+  @include desktop {
+      column-gap: 4rem;
+  }
 
 }
+
+.employee{
+  @include flex($direction:column);
+  &__name{
+      @include font($color:$alternative-background, $line:1.5rem);
+      @include tablet {
+          font-size: 0.85rem;
+          margin-top:0;
+      }
+      @include desktop {
+          font-size:1em;
+      }
+  }
+  &__address {
+      margin:0 0 1rem 0;
+      @include font($color:$alternative-background, $weight:400, $line:1.5rem);
+      @include tablet {
+          font-size: 0.85rem;
+      }
+      @include desktop {
+          font-size:1em;
+          margin-bottom: 1.5rem;
+      }
+  }
+  &__email {
+      text-decoration: none;
+      @include font($color:$alternative-background, $weight:400);
+      margin-bottom:1rem;
+      @include tablet {
+          margin-bottom:0;
+          font-size: 0.9rem;
+      }
+  }
+}
+
+
+.copyright {
+  @include font($size:0.85rem, $color:$alternative-background, $weight:400);
+  margin:1.5rem 0;
+  @include tablet {
+      margin:0;
+  }
+}
+
+.logo-mobile {
+  // transform: scale(1.25);
+  width: 10rem;
+  align-self: flex-start;
+  padding: 1.5rem 1rem 0.5rem 0;
+  @include tablet {
+      display:none;
+  }
+}
+
+
+
 
 .footer__band--logo{
-  text-align:right;
+  
   background-image: url(/assets/Logo/Logo-bandsite.svg);
   height:20px;
   width:120px;
   padding-right: 20px;
   background-repeat: no-repeat;
-  box-sizing: border-box;
+ 
   
   
   
 }
 
+.form{ 
+  padding: 0 1rem;
+  
+  
+  @include mobile{
+    height: 3.6vh;
+    width: auto;
+  }
+
+  @include desktop {
+    height: 5.8vh;
+    width: auto;
+    padding: 0 30rem;
+
+   
+
+  &__container{
+    margin: 0 auto;
+    width:min(100%, $breakpointdesktop);
+
+    }
+
+      }
+
+      &__heading{
+        font-weight: bold;
+        margin:0;
+        padding:1.5rem 0 1rem 0;
+
+      }
+      
+      &__photo{
+          margin-top:1rem;
+          height: 3rem;
+          width: 3rem;
+          border-radius:50%;
+          overflow: hidden;
+          flex-direction: column;
+      }
+      &__photo-create{
+          height:3rem;
+
+      }
+      &__comment{
+        flex-direction: column;
+      }
+      &__label{
+        text-transform: uppercase;
+    
+
+      }
+      &__input{
+        height: 2.75rem;
+        width: 20rem;
+        @include mobile{
+          width:15rem;
+        }
+        @include desktop{
+          width:32rem;
+          font-size: 0.75rem;
+          font-weight: 400;
+        }
+        padding-left:1rem;
+        background-color:$clr-secondary-mercury;
+        border-radius: 4px;
+        &:focus{
+          border:1px solid black;
+          outline:none;
+        }
+
+        &-short {
+          margin-bottom: 1.35rem;
+        }
+        &-long {
+          height: 5rem;
+          resize: none;
+          padding-top: 1rem;
+          
+        }
+
+      }
+          
+    }
+
+ 
+
+    .btn{
+      @include btn;
+      @include desktop{
+        width:13rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        font-weight: 400;
+        background-color: $clr-primary-black;
+      
+      }
+
+    }
