@@ -59,8 +59,6 @@ ul {
   
 
 
- 
-
   .navbar__list {
     display:flex;
     flex-wrap:wrap;
@@ -133,21 +131,44 @@ ul {
 
   }
 
-  .about{
-    display:flex;
-    &__image{
-      @include mobile{
-        height: 34vh;
   
+
+  .about__title {
+
+  font-size: 2rem;
+  font-weight: 500;
+  color: #323232;
+  line-height: normal;
+  padding: 1.5rem 0 1rem 0;
+  margin: 0;
+      
+  }
+
+
+  .about__image {
+        display: flex;
+        justify-content: normal;
+        flex-direction: column;
+        align-self: center;
+        height: 100%;
+        width: 100%;
+        
       }
 
-      @include desktop{
-        height:74vh;
-        position:center;
-      }
-    
+      @media (min-width: 768px) {
+        .about__image {
+          height:21rem;
+          width:37rem;
     }
+
   }
+    @media (min-width:1280px) {
+      .about__image{
+        height: 30rem;
+        width:53rem;
+        
+      }
+    }
 
 
 
